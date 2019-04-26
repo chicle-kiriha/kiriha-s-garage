@@ -1,0 +1,62 @@
+﻿<style type="text/css">
+    .neirong{
+            border-bottom: 3px solid #e5e5e5;
+            font-size: 20px;
+            font-family:"隶书";
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            margin-right:80px;
+        }
+    .top{
+            height: 50px;
+            width:100%;
+            background:#66ccff;
+            position: fixed;
+            top: 0;
+        }
+    .top ul{          
+            width: 80%;
+            list-style-type: none;
+            margin: 0;            
+            padding: 0;
+            overflow: hidden;
+        }
+    .top li {    
+            list-style: disc;
+            float: left;
+	    font-size: 17px;
+	    line-height: 1.59;
+            margin-right:50px;
+        }
+
+    .top li a{
+            display: block;
+            color:white;
+            float: left;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+    .top li a:hover{
+            background-color: pink;
+        }
+</style>
+<body>
+        <div class="top">
+                <ul >
+                        <li><a href="/page1">豆瓣图书TOP250</a></li>
+                        <li><a href="/page2">京东商品</a></li> 
+			<li><a href="/page3">天气预报</a></li>           
+                </ul>
+        </div>
+                <div style="margin-top: 50px;">
+                {% for jd in jd_list %}
+                        <div class="neirong">
+                                <h3>产品名称：{{ jd.ititle}}</h3>
+                                <p>价格：{{ jd.price}}</p>
+                                <p>简介：{{ jd.intro}}</p>  
+                        </div>
+                {% endfor %}
+                </div>
+        </div>
+</body>
